@@ -6,7 +6,7 @@ echo -e $'home_server remoteradius3 {\n    type = auth\n    ipaddr = '$remoterad
 echo -e $'home_server remoteradius4 {\n    type = auth\n    ipaddr = '$remoteradius4'\n    port = 1812\n    secret = '$remote_radius_secret'\n }' >> $(pwd)/Conf_Files/proxy.conf
 echo -e $'home_server remoteradius5 {\n    type = auth\n    ipaddr = '$remoteradius5'\n    port = 1812\n    secret = '$remote_radius_secret'\n }' >> $(pwd)/Conf_Files/proxy.conf
 echo -e $'home_server remoteradius6 {\n    type = auth\n    ipaddr = '$remoteradius6'\n    port = 1812\n    secret = '$remote_radius_secret'\n }' >> $(pwd)/Conf_Files/proxy.conf
-echo -e $'home_server_pool remote_radius_failover {\n   type = fail-over\n      home_server = remoteradius1\n   home_server = remoteradius2\n   home_server = remoteradius3\n   home_server = remoteradius4\n   home_server = remoteradius5\n   home_server = remoteradius6\n }' >> $(pwd)/Free_Radius/proxy.conf
+echo -e $'home_server_pool remote_radius_failover {\n   type = fail-over\n      home_server = remoteradius1\n   home_server = remoteradius2\n   home_server = remoteradius3\n   home_server = remoteradius4\n   home_server = remoteradius5\n   home_server = remoteradius6\n }' >> $(pwd)/Conf_Files/proxy.conf
 echo -e $'realm DEFAULT {\n        auth_pool = remote_radius_failover\n}' >> $(pwd)/Conf_Files/proxy.conf
 
 
